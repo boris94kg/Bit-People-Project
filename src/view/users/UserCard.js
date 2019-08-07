@@ -4,7 +4,7 @@ const UserCard = (props) => {
     const { user } = props;
     const femaleColor = user.isFemale() ? "is-female" : "";
     return (
-        <div className="one-user-card col-sm-6 col-lg-4">
+        <div className="one-user-card col-sm-6 col-md-6 col-lg-4">
             <div className={`card-holder ${femaleColor}`}>
                 <div className="card-image-holder">
                     <img src={user.largeImage} alt="" />
