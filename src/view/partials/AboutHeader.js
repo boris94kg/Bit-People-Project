@@ -2,8 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import MenuItems from './MenuItems.js';
 
-export const AboutHeader = (props) => {
-    const { title } = props;
+export const AboutHeader = ({ title }) => {
 
     return (
         <header className='container-fluid'>

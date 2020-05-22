@@ -1,7 +1,6 @@
 import React from 'react';
 
-const UserCard = (props) => {
-    const { user } = props;
+const UserCard = ({ user }) => {
     const femaleColor = user.isFemale() ? "is-female" : "";
     return (
         <div className="one-user-card col-sm-6 col-md-6 col-lg-4">
@@ -16,7 +15,6 @@ const UserCard = (props) => {
                         {user.hideEmail()}
                     </p>
                     <p className="user-birthday">
-
                         Birth date: {user.getFormatDate()}
                     </p>
                 </div>
@@ -26,4 +24,4 @@ const UserCard = (props) => {
 }
 
 
-export { UserCard }
+export { UserCard };

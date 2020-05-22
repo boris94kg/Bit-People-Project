@@ -2,12 +2,9 @@ import React from 'react';
 import { UserList } from '../users/UserList.js';
 import { UserCardList } from '../users/UserCardList.js';
 
-
-const Main = (props) => {
-    const { onInputChange, inputValue } = props;
+const Main = ({ onInputChange, inputValue, isGrid, users }) => {
 
     return (
-
         <div className="container main-holder">
             <div className="row">
 
@@ -17,8 +14,9 @@ const Main = (props) => {
                 </div>
 
             </div>
-            {props.isGrid ? <UserCardList listOfUsers={props.users} /> : <UserList listOfUsers={props.users} />}
+            {isGrid ? <UserCardList listOfUsers={users} /> : <UserList listOfUsers={users} />}
         </div>
     )
 }
+
 export { Main }

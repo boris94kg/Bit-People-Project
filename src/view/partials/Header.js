@@ -1,9 +1,7 @@
 import React from 'react';
-
 import MenuItems from './MenuItems.js';
 
-export const Header = (props) => {
-    const { title, onButtonClick, isGrid, onRefreshClick } = props;
+export const Header = ({ title, onButtonClick, isGrid, onRefreshClick }) => {
 
     return (
         <header className='container-fluid'>

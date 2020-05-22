@@ -1,7 +1,6 @@
 import React from 'react';
 
-const UserItem = (props) => {
-    const { user } = props;
+const UserItem = ({ user }) => {
     const femaleColor = user.isFemale() ? "is-female" : "";
 
     return (
@@ -23,6 +22,5 @@ const UserItem = (props) => {
         </div>
     );
 }
-
 
 export { UserItem }

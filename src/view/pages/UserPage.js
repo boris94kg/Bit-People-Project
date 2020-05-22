@@ -19,6 +19,11 @@ class UserPage extends React.Component {
         }
     }
 
+    componentDidMount() {
+        this.onLoadUsers();
+        this.loadUsers();
+    }
+
     loadUsers() {
         fetchUsers()
             .then(users => this.setState({ users }))
@@ -34,7 +39,7 @@ class UserPage extends React.Component {
 
     onButtonClick = () => {
         this.setState((prevState, props) => {
-
+            console.log(props, 'iz klicka')
             const isGrid = !prevState.isGrid;
             localStorage.setItem('isGrid', isGrid);
 
@@ -45,7 +50,6 @@ class UserPage extends React.Component {
     }
 
     onRefreshClick = () => {
-
         this.setState({ loading: true }, () => {
             fetchUsers()
                 .then(users => this.setState({ loading: false, users }))
@@ -56,14 +60,10 @@ class UserPage extends React.Component {
         this.setState({ inputValue: e.target.value })
     }
 
-    componentDidMount() {
-        this.onLoadUsers();
-        this.loadUsers();
-    }
-
     render() {
 
-        const { inputValue, loading, users } = this.state;
+        const { onButtonClick, onRefreshClick, onInputChange } = this;
+        const { inputValue, loading, users, isGrid } = this.state;
 
         const updatedUsers = users.filter((user) => {
             return user.getFullName().toLowerCase().indexOf(inputValue.toLowerCase()) !== -1;
@@ -71,11 +71,11 @@ class UserPage extends React.Component {
 
         return (
             <React.Fragment>
-                <Header onButtonClick={this.onButtonClick} onRefreshClick={this.onRefreshClick} isGrid={this.state.isGrid} title="BitPeople" />
+                <Header onButtonClick={onButtonClick} onRefreshClick={onRefreshClick} isGrid={isGrid} title="BitPeople" />
                 {users.length === 0 || loading ?
                     <Preloader />
                     :
-                    <Main onInputChange={this.onInputChange} inputValue={inputValue} isGrid={this.state.isGrid} users={updatedUsers} />
+                    <Main onInputChange={onInputChange} inputValue={inputValue} isGrid={isGrid} users={updatedUsers} />
                 }
             </React.Fragment>
         );
