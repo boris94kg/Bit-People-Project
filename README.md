@@ -1,6 +1,7 @@
 # React Bit-People-Project
 
 Simple React App where user can search and see users as a grid or simple list and can refresh the page.
+
 Live App at : https://bit-people-project.netlify.app/
 
 --------------------------------------------------------------------------------------
