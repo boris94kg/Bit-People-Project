@@ -29,6 +29,7 @@ header a:hover {
 .header-inner {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0;
   height: 100%;
 }
@@ -175,8 +176,8 @@ header a:hover {
   align-self: center;
 }
 
-.user-email>i,
-.user-birthday>i {
+.user-email > i,
+.user-birthday > i {
   margin-right: 10px;
 }
 
@@ -188,6 +189,10 @@ header a:hover {
 footer p {
   margin: 0;
   padding: 30px;
+}
+
+.about-space {
+  margin: 0 6px;
 }
 
 /* preloader style 8 */
@@ -267,7 +272,6 @@ footer p {
 }
 
 @-webkit-keyframes sk-cubeGridScaleDelay {
-
   0%,
   70%,
   100% {
@@ -282,7 +286,6 @@ footer p {
 }
 
 @keyframes sk-cubeGridScaleDelay {
-
   0%,
   70%,
   100% {
@@ -304,25 +307,28 @@ footer p {
 
 @media screen and (min-width: 1140px) {
   .inner-user-holder {
-      width: 100%;
-      margin-left: 2px;
-      margin-right: 0px;
-    }
+    width: 100%;
+    margin-left: 2px;
+    margin-right: 0px;
+  }
 }
 
 @media screen and (max-width: 992px) {
   .inner-user-holder {
-      width: 100%;
-      margin-left: 2px;
-      margin-right: 0px;
-    }
+    width: 100%;
+    margin-left: 2px;
+    margin-right: 0px;
+  }
+  .main-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.2rem;
+  }
 }
 
 @media screen and (min-width: 991px) {
   .inner-user-holder {
-      width: 100%;
-      margin-left: 2px;
-      margin-right: 0px;
-    }
+    width: 100%;
+    margin-left: 2px;
+    margin-right: 0px;
+  }
 }
-
